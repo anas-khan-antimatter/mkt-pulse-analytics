@@ -4,6 +4,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import PricingSection from "@/components/PricingSection";
 import ROICalculatorSection from "@/components/ROICalculatorSection";
 import DocsSection from "@/components/DocsSection";
+import DemoSection from "@/components/DemoSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <PricingSection />
       <ROICalculatorSection />
       <DocsSection />
+      <DemoSection />
     </>
   );
 }
