@@ -1,0 +1,23 @@
+{
+  "root": "/tmp/am-ws/ch_muna2ojo_1",
+  "name": "ch_muna2ojo_1",
+  "generatedAt": "2026-09-29T22:58:54.883Z",
+  "fileCount": 1,
+  "dirCount": 1,
+  "languages": {
+    "Markdown": 1
+  },
+  "keyFiles": [
+    "README.md"
+  ],
+  "directories": [
+    {
+      "dir": "(root)",
+      "fileCount": 1,
+      "files": [
+        "README.md"
+      ],
+      "symbols": []
+    }
+  ]
+}
