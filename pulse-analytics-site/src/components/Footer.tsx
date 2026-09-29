@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, X, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, X, Globe, Mail, Heart } from "lucide-react";
 
 const footerLinks = {
   Product: [
@@ -27,7 +27,7 @@ const footerLinks = {
 const socialLinks = [
   { icon: Github, href: "#", label: "GitHub" },
   { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Globe, href: "#", label: "LinkedIn" },
   { icon: Mail, href: "#", label: "Email" },
 ];
 
