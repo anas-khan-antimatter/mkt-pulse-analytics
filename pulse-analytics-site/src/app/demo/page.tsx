@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   TrendingUp,
@@ -15,7 +15,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 
-// ── Mock data generators ──────────────────────────────────────────────
+// ── Local fallback data generators (used when API is unreachable) ─────
 
 function generateMonthlyData(months: number, base: number, variance: number) {
   const monthsArr = [
@@ -27,10 +27,6 @@ function generateMonthlyData(months: number, base: number, variance: number) {
     value: Math.round(base + (Math.random() - 0.5) * variance * 2),
   }));
 }
-
-const arrData = generateMonthlyData(12, 480000, 80000);
-const churnData = generateMonthlyData(12, 32000, 8000);
-const mrrData = generateMonthlyData(12, 420000, 40000);
 
 const kpis = [
   {
