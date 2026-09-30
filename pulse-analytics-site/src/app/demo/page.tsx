@@ -245,6 +245,62 @@ function LineChart({
 export default function DemoPage() {
   const [timeRange, setTimeRange] = useState("12m");
   const [selectedKpi, setSelectedKpi] = useState(kpis[0]);
+  const [arrData, setArrData] = useState(() => generateMonthlyData(12, 480000, 80000));
+  const [churnData, setChurnData] = useState(() => generateMonthlyData(12, 32000, 8000));
+  const [mrrData, setMrrData] = useState(() => generateMonthlyData(12, 420000, 40000));
+  const [dataSource, setDataSource] = useState<"local" | "api">("local");
+  const [loading, setLoading] = useState(false);
+
+  // ── Fetch data from API with fallback ───────────────────────────────
+  const fetchMetrics = useCallback(async (range: string) => {
+    setLoading(true);
+    try {
+      const res = await fetch(`/api/demo-metrics?range=${range}`);
+      if (res.ok) {
+        const json = await res.json();
+        const months = json.months ?? [];
+        if (months.length > 0) {
+          const newArr = months.map((m: { month: string; revenue: number }) => ({
+            month: m.month,
+            value: m.revenue,
+          }));
+          const newChurn = months.map((m: { month: string; churn: number }) => ({
+            month: m.month,
+            value: Math.round(m.churn * 10000),
+          }));
+          const newMrr = months.map((m: { month: string; mrr: number }) => ({
+            month: m.month,
+            value: m.mrr,
+          }));
+          setArrData(newArr);
+          setChurnData(newChurn);
+          setMrrData(newMrr);
+          setDataSource("api");
+          return;
+        }
+      }
+    } catch {
+      // API unreachable — fall through to local
+    }
+    // Local fallback
+    const count = range === "3m" ? 3 : range === "6m" ? 6 : 12;
+    setArrData(generateMonthlyData(count, 480000, 80000));
+    setChurnData(generateMonthlyData(count, 32000, 8000));
+    setMrrData(generateMonthlyData(count, 420000, 40000));
+    setDataSource("local");
+    setLoading(false);
+  }, []);
+
+  // Initial load on component mount
+  useEffect(() => {
+    fetchMetrics(timeRange);
+  }, [fetchMetrics, timeRange]);
+
+  // Restore timeRange setter to also fetch
+  const onTimeRangeChange = useCallback((range: string) => {
+    setTimeRange(range);
+    fetchMetrics(range);
+  }, [fetchMetrics]);
 
   return (
     <div className="min-h-screen pt-24 pb-16 bg-background">
@@ -267,7 +323,7 @@ export default function DemoPage() {
               {["3m", "6m", "12m"].map((r) => (
                 <button
                   key={r}
-                  onClick={() => setTimeRange(r)}
+                  onClick={() => onTimeRangeChange(r)}
                   className={`px-3 py-1 text-xs rounded-md transition-all ${
                     timeRange === r
                       ? "bg-primary text-primary-foreground"
