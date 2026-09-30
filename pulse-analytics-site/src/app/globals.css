@@ -47,73 +47,84 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* ─── Pulse Analytics Brand Design System ──────────────────────────
+ *  Dark dashboard chrome · Neon cyan data accents · High-density UI
+ *  Distinctive from generic shadcn blue/indigo defaults.
+ *  Primary: oklch(0.62 0.22 175) — vivid neon cyan
+ *  Background: oklch(0.02 0.01 175) — near-black with cyan cast
+ *  Foreground: oklch(0.96 0.01 175) — slightly cyan-tinted white
+ * ─────────────────────────────────────────────────────────────────*/
+
 :root {
-  --background: oklch(0.04 0.02 264);
-  --foreground: oklch(0.97 0.01 264);
-  --card: oklch(0.12 0.03 264 / 0.5);
-  --card-foreground: oklch(0.97 0.01 264);
-  --popover: oklch(0.12 0.03 264 / 0.8);
-  --popover-foreground: oklch(0.97 0.01 264);
-  --primary: oklch(0.65 0.18 250);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.2 0.05 264);
-  --secondary-foreground: oklch(0.97 0.01 264);
-  --muted: oklch(0.15 0.03 264);
-  --muted-foreground: oklch(0.65 0.03 264);
-  --accent: oklch(0.65 0.18 250 / 0.15);
-  --accent-foreground: oklch(0.97 0.01 264);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.25 0.05 264 / 0.4);
-  --input: oklch(0.2 0.04 264);
-  --ring: oklch(0.65 0.18 250);
-  --chart-1: oklch(0.65 0.18 250);
-  --chart-2: oklch(0.55 0.15 200);
-  --chart-3: oklch(0.6 0.15 300);
-  --chart-4: oklch(0.7 0.15 280);
-  --chart-5: oklch(0.6 0.15 180);
-  --radius: 0.75rem;
-  --sidebar: oklch(0.12 0.03 264 / 0.5);
-  --sidebar-foreground: oklch(0.97 0.01 264);
-  --sidebar-primary: oklch(0.65 0.18 250);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.65 0.18 250 / 0.15);
-  --sidebar-accent-foreground: oklch(0.97 0.01 264);
-  --sidebar-border: oklch(0.25 0.05 264 / 0.4);
-  --sidebar-ring: oklch(0.65 0.18 250);
+  --background: oklch(0.02 0.008 175);
+  --foreground: oklch(0.96 0.012 175);
+  --card: oklch(0.06 0.015 175 / 0.55);
+  --card-foreground: oklch(0.96 0.012 175);
+  --popover: oklch(0.06 0.015 175 / 0.8);
+  --popover-foreground: oklch(0.96 0.012 175);
+  /* Neon cyan primary */
+  --primary: oklch(0.62 0.22 175);
+  --primary-foreground: oklch(0.02 0 0);
+  --secondary: oklch(0.14 0.03 175);
+  --secondary-foreground: oklch(0.85 0.03 175);
+  --muted: oklch(0.08 0.015 175);
+  --muted-foreground: oklch(0.58 0.04 175);
+  /* Accent: bright cyan glow */
+  --accent: oklch(0.62 0.22 175 / 0.12);
+  --accent-foreground: oklch(0.96 0.012 175);
+  --destructive: oklch(0.54 0.22 30);
+  --border: oklch(0.18 0.03 175 / 0.35);
+  --input: oklch(0.12 0.02 175);
+  --ring: oklch(0.62 0.22 175);
+  /* Chart colors: neon on dark */
+  --chart-1: oklch(0.62 0.22 175);
+  --chart-2: oklch(0.58 0.26 50);
+  --chart-3: oklch(0.55 0.22 290);
+  --chart-4: oklch(0.50 0.20 135);
+  --chart-5: oklch(0.52 0.18 85);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.06 0.015 175 / 0.5);
+  --sidebar-foreground: oklch(0.96 0.012 175);
+  --sidebar-primary: oklch(0.62 0.22 175);
+  --sidebar-primary-foreground: oklch(0.02 0 0);
+  --sidebar-accent: oklch(0.62 0.22 175 / 0.12);
+  --sidebar-accent-foreground: oklch(0.96 0.012 175);
+  --sidebar-border: oklch(0.18 0.03 175 / 0.35);
+  --sidebar-ring: oklch(0.62 0.22 175);
 }
 
 .dark {
-  --background: oklch(0.04 0.02 264);
-  --foreground: oklch(0.97 0.01 264);
-  --card: oklch(0.12 0.03 264 / 0.5);
-  --card-foreground: oklch(0.97 0.01 264);
-  --popover: oklch(0.12 0.03 264 / 0.8);
-  --popover-foreground: oklch(0.97 0.01 264);
-  --primary: oklch(0.65 0.18 250);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.2 0.05 264);
-  --secondary-foreground: oklch(0.97 0.01 264);
-  --muted: oklch(0.15 0.03 264);
-  --muted-foreground: oklch(0.65 0.03 264);
-  --accent: oklch(0.65 0.18 250 / 0.15);
-  --accent-foreground: oklch(0.97 0.01 264);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(0.25 0.05 264 / 0.4);
-  --input: oklch(0.2 0.04 264);
-  --ring: oklch(0.65 0.18 250);
-  --chart-1: oklch(0.65 0.18 250);
-  --chart-2: oklch(0.55 0.15 200);
-  --chart-3: oklch(0.6 0.15 300);
-  --chart-4: oklch(0.7 0.15 280);
-  --chart-5: oklch(0.6 0.15 180);
-  --sidebar: oklch(0.12 0.03 264 / 0.5);
-  --sidebar-foreground: oklch(0.97 0.01 264);
-  --sidebar-primary: oklch(0.65 0.18 250);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.65 0.18 250 / 0.15);
-  --sidebar-accent-foreground: oklch(0.97 0.01 264);
-  --sidebar-border: oklch(0.25 0.05 264 / 0.4);
-  --sidebar-ring: oklch(0.65 0.18 250);
+  --background: oklch(0.02 0.008 175);
+  --foreground: oklch(0.96 0.012 175);
+  --card: oklch(0.06 0.015 175 / 0.55);
+  --card-foreground: oklch(0.96 0.012 175);
+  --popover: oklch(0.06 0.015 175 / 0.8);
+  --popover-foreground: oklch(0.96 0.012 175);
+  --primary: oklch(0.62 0.22 175);
+  --primary-foreground: oklch(0.02 0 0);
+  --secondary: oklch(0.14 0.03 175);
+  --secondary-foreground: oklch(0.85 0.03 175);
+  --muted: oklch(0.08 0.015 175);
+  --muted-foreground: oklch(0.58 0.04 175);
+  --accent: oklch(0.62 0.22 175 / 0.12);
+  --accent-foreground: oklch(0.96 0.012 175);
+  --destructive: oklch(0.54 0.22 30);
+  --border: oklch(0.18 0.03 175 / 0.35);
+  --input: oklch(0.12 0.02 175);
+  --ring: oklch(0.62 0.22 175);
+  --chart-1: oklch(0.62 0.22 175);
+  --chart-2: oklch(0.58 0.26 50);
+  --chart-3: oklch(0.55 0.22 290);
+  --chart-4: oklch(0.50 0.20 135);
+  --chart-5: oklch(0.52 0.18 85);
+  --sidebar: oklch(0.06 0.015 175 / 0.5);
+  --sidebar-foreground: oklch(0.96 0.012 175);
+  --sidebar-primary: oklch(0.62 0.22 175);
+  --sidebar-primary-foreground: oklch(0.02 0 0);
+  --sidebar-accent: oklch(0.62 0.22 175 / 0.12);
+  --sidebar-accent-foreground: oklch(0.96 0.012 175);
+  --sidebar-border: oklch(0.18 0.03 175 / 0.35);
+  --sidebar-ring: oklch(0.62 0.22 175);
 }
 
 @layer base {
@@ -128,13 +139,21 @@
   }
 }
 
-/* Glassmorphism utility */
+/* ─── Glass & Glow Utilities ───────────────────────────────────────
+ *  Our signature "data dashboard chrome" look uses cyan-tinted glass
+ *  with higher contrast than the standard shadcn glass.
+ * ────────────────────────────────────────────────────────────────*/
+
 .glass {
-  @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.06] shadow-lg;
+  @apply bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] shadow-lg;
+  box-shadow: 0 0 20px -10px oklch(0.18 0.03 175 / 0.15);
 }
 
 .glass-card {
-  @apply bg-white/[0.04] backdrop-blur-2xl border border-white/[0.08] shadow-xl rounded-2xl;
+  @apply bg-white/[0.05] backdrop-blur-2xl border border-white/[0.1] shadow-xl rounded-2xl;
+  box-shadow:
+    0 0 30px -12px oklch(0.18 0.03 175 / 0.12),
+    inset 0 1px 0 oklch(1 0 0 / 0.03);
 }
 
 .glass-card-hover {
@@ -142,38 +161,126 @@
 }
 
 .glass-card-hover:hover {
-  @apply bg-white/[0.07] border-white/[0.12] shadow-2xl;
+  @apply bg-white/[0.08] border-white/[0.14] shadow-2xl;
 }
 
-/* Gradient text */
+/* Neon line variant — thinner, tighter for data-heavy cards */
+.glass-data {
+  @apply bg-white/[0.035] backdrop-blur-md border border-white/[0.06] shadow rounded-xl;
+}
+
+/* ─── Gradient Text (Cyan → Teal → Violet) ─────────────────────────*/
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-violet-400;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-teal-400 to-violet-400;
 }
 
-/* Section spacing */
+/* Inverted gradient for dark backgrounds */
+.gradient-text-cyber {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-cyan-400 to-teal-300;
+}
+
+/* ─── Section Spacing ──────────────────────────────────────────────*/
 .section-padding {
-  @apply py-24 md:py-32;
+  @apply py-20 md:py-28;
 }
 
-/* Pulse glow animation */
+/* ─── Animated Pulse Glow (Cyan tint) ──────────────────────────────*/
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.05); }
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.06); }
 }
 
 .animate-pulse-glow {
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
-/* Grid pattern background */
+/* ─── Data Grid Background ──────────────────────────────────────────*/
 .bg-grid {
-  background-image: 
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-image:
+    linear-gradient(rgba(0, 229, 229, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 229, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-/* Radial gradient overlay */
+/* Denser grid for dashboard-style sections */
+.bg-grid-dense {
+  background-image:
+    linear-gradient(rgba(0, 229, 229, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 229, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ─── Radial Cyan Glow ────────────────────────────────────────────*/
 .radial-glow {
-  background: radial-gradient(ellipse 50% 50% at 50% 0%, oklch(0.65 0.18 250 / 0.12) 0%, transparent 70%);
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 0%,
+    oklch(0.62 0.22 175 / 0.1) 0%,
+    transparent 65%
+  );
+}
+
+.radial-glow-bright {
+  background: radial-gradient(
+    ellipse 40% 40% at 50% 50%,
+    oklch(0.62 0.22 175 / 0.18) 0%,
+    transparent 60%
+  );
+}
+
+/* ─── Cyan Scan Line ─────────────────────────────────────────────*/
+@keyframes scan-line {
+  0% { top: -10%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 110%; opacity: 0; }
+}
+
+.animate-scan-line {
+  animation: scan-line 4s linear infinite;
+}
+
+/* ─── Data viz utility: stat card ──────────────────────────────────*/
+.stat-cyber {
+  @apply font-bold tabular-nums;
+  text-shadow: 0 0 12px oklch(0.62 0.22 175 / 0.3);
+}
+
+/* ─── Metric label ────────────────────────────────────────────────*/
+.metric-label {
+  @apply text-[10px] uppercase tracking-wider text-muted-foreground/60 font-medium;
+}
+
+/* ─── Data divider — thin cyan rule ───────────────────────────────*/
+.rule-cyber {
+  @apply border-t border-cyan-500/20;
+}
+
+/* ─── Number formatting for data displays ─────────────────────────*/
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Dashboard chrome border treatment ───────────────────────────*/
+.chrome-edge {
+  box-shadow:
+    0 0 0 1px oklch(0.18 0.03 175 / 0.3),
+    0 0 0 1px oklch(0.62 0.22 175 / 0.05) inset;
+}
+
+/* ─── Scrollbar styling for data-heavy panels ─────────────────────*/
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.3 0.05 175 / 0.4);
+  border-radius: 2px;
+}
+
+/* ─── Selection ───────────────────────────────────────────────────*/
+::selection {
+  @apply bg-cyan-500/30 text-cyan-100;
 }
