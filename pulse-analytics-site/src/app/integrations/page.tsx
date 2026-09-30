@@ -406,6 +406,79 @@ export default function IntegrationsPage() {
             <ExternalLink size={14} />
           </a>
         </motion.div>
+
+        {/* ── Webhook Simulator ─────────────────────────────────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="mt-16"
+        >
+          <div className="glass-card p-6 md:p-8 max-w-2xl mx-auto">
+            <div className="flex items-center gap-2 mb-4">
+              <Zap size={18} className="text-primary" />
+              <h3 className="text-base font-semibold">Webhook Test Simulator</h3>
+            </div>
+            <p className="text-xs text-muted-foreground mb-4">
+              Send a sample webhook event to <code className="text-primary/80">/api/webhooks/test</code> and inspect the response.
+            </p>
+            <div className="flex flex-col sm:flex-row items-start gap-3">
+              <select
+                id="webhook-event-select"
+                className="h-9 rounded-xl bg-white/[0.05] border border-white/[0.08] px-3 text-xs text-foreground flex-1"
+              >
+                <option value="deal.won">deal.won</option>
+                <option value="deal.lost">deal.lost</option>
+                <option value="pipeline.stage_changed">pipeline.stage_changed</option>
+                <option value="forecast.updated">forecast.updated</option>
+                <option value="integration.connected" selected>integration.connected</option>
+              </select>
+              <button
+                id="webhook-send-btn"
+                onClick={async () => {
+                  const select = document.getElementById("webhook-event-select") as HTMLSelectElement;
+                  const log = document.getElementById("webhook-log");
+                  const btn = document.getElementById("webhook-send-btn") as HTMLButtonElement;
+                  if (!select || !log) return;
+                  btn.disabled = true;
+                  btn.innerHTML = '<span class="animate-spin">⏳</span> Sending...';
+                  try {
+                    const res = await fetch("/api/webhooks/test", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({
+                        event: select.value,
+                        timestamp: new Date().toISOString(),
+                        payload: {
+                          dealId: `deal_${Math.random().toString(36).slice(2, 8)}`,
+                          amount: Math.round(5000 + Math.random() * 95000),
+                          pipeline: "Enterprise Q3",
+                          stage: "Negotiation",
+                          rep: "alice@example.com",
+                        },
+                      }),
+                    });
+                    const data = await res.json();
+                    log.textContent = JSON.stringify(data, null, 2);
+                  } catch {
+                    log.textContent = JSON.stringify({ error: "Network error — is the API running?" }, null, 2);
+                  } finally {
+                    btn.disabled = false;
+                    btn.innerHTML = "Send Event";
+                  }
+                }}
+                className="h-9 px-4 rounded-xl bg-primary text-primary-foreground text-xs font-medium"
+              >
+                Send Event
+              </button>
+            </div>
+            <pre
+              id="webhook-log"
+              className="mt-4 p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-[10px] text-cyan-400 font-mono leading-relaxed overflow-x-auto"
+            >
+{`Click "Send Event" to post a sample webhook.\nThe response will appear here.`}</pre>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
