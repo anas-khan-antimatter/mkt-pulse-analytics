@@ -1,21 +1,117 @@
 {
-  "root": "/tmp/am-ws/ch_muna2ojo_1",
-  "name": "ch_muna2ojo_1",
-  "generatedAt": "2026-09-29T22:58:54.883Z",
-  "fileCount": 1,
-  "dirCount": 1,
+  "root": "/tmp/am-ws/c-1790732955989-v0yiv",
+  "name": "c-1790732955989-v0yiv",
+  "generatedAt": "2026-09-30T16:43:33.993Z",
+  "fileCount": 39,
+  "dirCount": 8,
   "languages": {
-    "Markdown": 1
+    "Markdown": 9,
+    "JSON": 5,
+    "JavaScript": 2,
+    "TypeScript": 14,
+    "CSS": 1
   },
   "keyFiles": [
     "README.md"
   ],
   "directories": [
     {
+      "dir": ".antimatter/wiki",
+      "fileCount": 6,
+      "files": [
+        "index.md",
+        "log.md",
+        "map.json",
+        "map.md",
+        "overview.md",
+        "schema.md"
+      ],
+      "symbols": []
+    },
+    {
       "dir": "(root)",
+      "fileCount": 2,
+      "files": [
+        ".gitignore",
+        "README.md"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "pulse-analytics-site",
+      "fileCount": 11,
+      "files": [
+        ".gitignore",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "components.json",
+        "eslint.config.mjs",
+        "next.config.ts",
+        "package-lock.json",
+        "package.json",
+        "postcss.config.mjs",
+        "README.md",
+        "tsconfig.json"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "pulse-analytics-site/public",
+      "fileCount": 5,
+      "files": [
+        "file.svg",
+        "globe.svg",
+        "next.svg",
+        "vercel.svg",
+        "window.svg"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "pulse-analytics-site/src/app",
+      "fileCount": 4,
+      "files": [
+        "favicon.ico",
+        "globals.css",
+        "layout.tsx",
+        "page.tsx"
+      ],
+      "symbols": [
+        {
+          "name": "metadata",
+          "kind": "const"
+        }
+      ]
+    },
+    {
+      "dir": "pulse-analytics-site/src/components",
+      "fileCount": 9,
+      "files": [
+        "DemoSection.tsx",
+        "DocsSection.tsx",
+        "FeaturesSection.tsx",
+        "Footer.tsx",
+        "HeroSection.tsx",
+        "LogosSection.tsx",
+        "Navbar.tsx",
+        "PricingSection.tsx",
+        "ROICalculatorSection.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "pulse-analytics-site/src/components/ui",
       "fileCount": 1,
       "files": [
-        "README.md"
+        "button.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "pulse-analytics-site/src/lib",
+      "fileCount": 1,
+      "files": [
+        "utils.ts"
       ],
       "symbols": []
     }
