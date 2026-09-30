@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, BarChart3, Grid3x3, Brain, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -11,9 +11,17 @@ const navLinks = [
   { label: "Docs", href: "#docs" },
 ];
 
+const productLinks = [
+  { label: "Dashboard", href: "/demo", icon: BarChart3 },
+  { label: "Integrations", href: "/integrations", icon: Grid3x3 },
+  { label: "Playground", href: "/playground", icon: Brain },
+  { label: "AI Insights", href: "/insights", icon: Sparkles },
+];
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [productOpen, setProductOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -33,7 +41,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
+          <a href="/" className="flex items-center gap-2.5 group">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
               <svg
                 width="18"
@@ -55,19 +63,64 @@ export default function Navbar() {
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-1">
+            {/* Product dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setProductOpen(!productOpen)}
+                onMouseEnter={() => setProductOpen(true)}
+                onMouseLeave={() => setProductOpen(false)}
+                className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-white/[0.05] transition-all"
+              >
+                <Sparkles size={14} />
+                Product
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`transition-transform ${productOpen ? "rotate-180" : ""}`}>
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+
+              <AnimatePresence>
+                {productOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                    transition={{ duration: 0.15 }}
+                    onMouseEnter={() => setProductOpen(true)}
+                    onMouseLeave={() => setProductOpen(false)}
+                    className="absolute top-full left-0 mt-1 w-56 glass rounded-2xl p-2 shadow-2xl border border-white/[0.08] backdrop-blur-2xl"
+                  >
+                    {productLinks.map((link) => {
+                      const Icon = link.icon;
+                      return (
+                        <a
+                          key={link.href}
+                          href={link.href}
+                          onClick={() => setProductOpen(false)}
+                          className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-muted-foreground hover:text-foreground hover:bg-white/[0.06] transition-all"
+                        >
+                          <Icon size={16} className="text-primary/70" />
+                          {link.label}
+                        </a>
+                      );
+                    })}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="px-3 py-2 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-white/[0.05] transition-all"
               >
                 {link.label}
               </a>
             ))}
             <a
               href="#demo"
-              className="inline-flex items-center justify-center h-9 px-5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all"
+              className="ml-2 inline-flex items-center justify-center h-9 px-5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all"
             >
               Request Demo
             </a>
@@ -94,24 +147,48 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: "easeInOut" }}
             className="md:hidden border-t border-white/[0.06] bg-background/90 backdrop-blur-2xl"
           >
-            <div className="px-6 py-5 space-y-4">
+            <div className="px-6 py-5 space-y-1">
+              {/* Product section */}
+              <div className="text-xs text-muted-foreground/60 font-medium uppercase tracking-wider px-3 py-2">
+                Product
+              </div>
+              {productLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-muted-foreground hover:text-foreground hover:bg-white/[0.05] transition-all"
+                  >
+                    <Icon size={16} className="text-primary/70" />
+                    {link.label}
+                  </a>
+                );
+              })}
+
+              <div className="border-t border-white/[0.06] my-3" />
+
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block text-muted-foreground hover:text-foreground transition-colors py-2"
+                  className="block px-3 py-2.5 rounded-xl text-sm text-muted-foreground hover:text-foreground hover:bg-white/[0.05] transition-all"
                 >
                   {link.label}
                 </a>
               ))}
-              <a
-                href="#demo"
-                onClick={() => setMobileOpen(false)}
-                className="block w-full text-center h-10 leading-10 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all"
-              >
-                Request Demo
-              </a>
+
+              <div className="pt-3">
+                <a
+                  href="#demo"
+                  onClick={() => setMobileOpen(false)}
+                  className="block w-full text-center h-11 leading-11 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all"
+                >
+                  Request Demo
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
