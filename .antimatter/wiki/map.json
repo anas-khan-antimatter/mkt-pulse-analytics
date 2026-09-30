@@ -1,14 +1,14 @@
 {
   "root": "/tmp/am-ws/c-1790732955989-v0yiv",
   "name": "c-1790732955989-v0yiv",
-  "generatedAt": "2026-09-30T17:40:20.466Z",
-  "fileCount": 39,
-  "dirCount": 8,
+  "generatedAt": "2026-09-30T17:54:25.299Z",
+  "fileCount": 44,
+  "dirCount": 13,
   "languages": {
     "Markdown": 9,
     "JSON": 5,
     "JavaScript": 2,
-    "TypeScript": 14,
+    "TypeScript": 19,
     "CSS": 1
   },
   "keyFiles": [
@@ -82,6 +82,51 @@
           "kind": "const"
         }
       ]
+    },
+    {
+      "dir": "pulse-analytics-site/src/app/api/insights",
+      "fileCount": 1,
+      "files": [
+        "route.ts"
+      ],
+      "symbols": [
+        {
+          "name": "POST",
+          "kind": "fn"
+        }
+      ]
+    },
+    {
+      "dir": "pulse-analytics-site/src/app/demo",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "pulse-analytics-site/src/app/insights",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "pulse-analytics-site/src/app/integrations",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "pulse-analytics-site/src/app/playground",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
     },
     {
       "dir": "pulse-analytics-site/src/components",

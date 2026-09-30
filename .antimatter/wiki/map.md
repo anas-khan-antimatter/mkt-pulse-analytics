@@ -1,9 +1,9 @@
 # Workspace Map — c-1790732955989-v0yiv
-_Generated 2026-09-30 · 39 files · 8 directories_  
+_Generated 2026-09-30 · 44 files · 13 directories_  
 _Deterministic structural map. Regenerate with the `map` tool or "Antimatter: Map Workspace". Do not hand-edit._
 
 ## Languages
-- TypeScript: 14
+- TypeScript: 19
 - Markdown: 9
 - JSON: 5
 - JavaScript: 2
@@ -28,6 +28,22 @@ _Deterministic structural map. Regenerate with the `map` tool or "Antimatter: Ma
 ### `pulse-analytics-site/src/app` — 4 files
 - symbols: metadata (const)
 - files: favicon.ico, globals.css, layout.tsx, page.tsx
+
+### `pulse-analytics-site/src/app/api/insights` — 1 file
+- symbols: POST (fn)
+- files: route.ts
+
+### `pulse-analytics-site/src/app/demo` — 1 file
+- files: page.tsx
+
+### `pulse-analytics-site/src/app/insights` — 1 file
+- files: page.tsx
+
+### `pulse-analytics-site/src/app/integrations` — 1 file
+- files: page.tsx
+
+### `pulse-analytics-site/src/app/playground` — 1 file
+- files: page.tsx
 
 ### `pulse-analytics-site/src/components` — 9 files
 - files: DemoSection.tsx, DocsSection.tsx, FeaturesSection.tsx, Footer.tsx, HeroSection.tsx, LogosSection.tsx, Navbar.tsx, PricingSection.tsx, ROICalculatorSection.tsx
