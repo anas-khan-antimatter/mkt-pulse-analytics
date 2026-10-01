@@ -5,22 +5,22 @@ import { Atom, X, Globe, Mail, Heart } from "lucide-react";
 
 const footerLinks = {
   Product: [
-    { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Integrations", href: "#" },
-    { label: "Changelog", href: "#" },
+    { label: "Features", href: "/" },
+    { label: "Pricing", href: "/#pricing" },
+    { label: "Dashboard", href: "/demo" },
+    { label: "Integrations", href: "/integrations" },
   ],
   Resources: [
-    { label: "Documentation", href: "#docs" },
-    { label: "API Reference", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Community", href: "#" },
+    { label: "Documentation", href: "/#docs" },
+    { label: "Playground", href: "/playground" },
+    { label: "API Insights", href: "/insights" },
+    { label: "ROI Calculator", href: "/#roi" },
   ],
   Company: [
-    { label: "About", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Privacy", href: "#" },
-    { label: "Terms", href: "#" },
+    { label: "About", href: "/" },
+    { label: "Privacy", href: "/" },
+    { label: "Terms", href: "/" },
+    { label: "Contact", href: "/" },
   ],
 };
 
