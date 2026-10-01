@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "runsOn": "ubuntu-latest",
+  "setup": [
+    "npm ci"
+  ],
+  "build": [
+    "npm run build"
+  ],
+  "probes": [
+    {
+      "kind": "browser",
+      "url": "/canvas"
+    },
+    {
+      "kind": "browser",
+      "url": "/demo"
+    },
+    {
+      "kind": "browser",
+      "url": "/integrations"
+    },
+    {
+      "kind": "browser",
+      "url": "/test"
+    },
+    {
+      "kind": "http",
+      "url": "/api/demo-metrics"
+    },
+    {
+      "kind": "http",
+      "url": "/api/webhooks/test"
+    }
+  ]
+}

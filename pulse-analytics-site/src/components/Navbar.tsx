@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, BarChart3, Grid3x3, Brain, Sparkles } from "lucide-react";
+import { Menu, X, BarChart3, Grid3x3, Brain, Sparkles, Monitor, Variable } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -13,8 +13,9 @@ const navLinks = [
 
 const productLinks = [
   { label: "Dashboard", href: "/demo", icon: BarChart3 },
+  { label: "Canvas Dashboard", href: "/canvas", icon: Monitor },
   { label: "Integrations", href: "/integrations", icon: Grid3x3 },
-  { label: "Playground", href: "/playground", icon: Brain },
+  { label: "API Playground", href: "/test", icon: Variable },
   { label: "AI Insights", href: "/insights", icon: Sparkles },
 ];
 
