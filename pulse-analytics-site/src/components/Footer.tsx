@@ -44,7 +44,7 @@ export default function Footer() {
             transition={{ duration: 0.4 }}
             className="lg:col-span-2"
           >
-            <a href="#" className="flex items-center gap-2.5 group mb-4">
+            <a href="/" className="flex items-center gap-2.5 group mb-4">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-primary flex items-center justify-center">
                 <svg
                   width="18"
