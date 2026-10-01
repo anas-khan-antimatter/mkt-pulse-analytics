@@ -1,16 +1,71 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Calculator, DollarSign, TrendingUp, Clock, RefreshCw } from "lucide-react";
 
+// ── Parse query params into initial values ──────────────────────────
+const DEFAULTS = {
+  dealsPerMonth: 50,
+  avgDealSize: 10000,
+  currentWinRate: 25,
+  improvedWinRate: 35,
+  monthlyCost: 79,
+  numUsers: 10,
+};
+
+function parseQueryParams(): Partial<typeof DEFAULTS> {
+  const sp = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
+  const out: Record<string, number> = {};
+  for (const key of Object.keys(DEFAULTS)) {
+    const raw = sp.get(key);
+    if (raw !== null) {
+      const n = Number(raw);
+      if (!Number.isNaN(n) && n >= 0) out[key] = n;
+    }
+  }
+  return out as Partial<typeof DEFAULTS>;
+}
+
 export default function ROICalculatorSection() {
-  const [dealsPerMonth, setDealsPerMonth] = useState(50);
-  const [avgDealSize, setAvgDealSize] = useState(10000);
-  const [currentWinRate, setCurrentWinRate] = useState(25);
-  const [improvedWinRate, setImprovedWinRate] = useState(35);
-  const [monthlyCost, setMonthlyCost] = useState(79);
-  const [numUsers, setNumUsers] = useState(10);
+  const fromUrl = typeof window !== "undefined" ? parseQueryParams() : {};
+  const [dealsPerMonth, _setDealsPerMonth] = useState(fromUrl.dealsPerMonth ?? DEFAULTS.dealsPerMonth);
+  const [avgDealSize, _setAvgDealSize] = useState(fromUrl.avgDealSize ?? DEFAULTS.avgDealSize);
+  const [currentWinRate, _setCurrentWinRate] = useState(fromUrl.currentWinRate ?? DEFAULTS.currentWinRate);
+  const [improvedWinRate, _setImprovedWinRate] = useState(fromUrl.improvedWinRate ?? DEFAULTS.improvedWinRate);
+  const [monthlyCost, _setMonthlyCost] = useState(fromUrl.monthlyCost ?? DEFAULTS.monthlyCost);
+  const [numUsers, _setNumUsers] = useState(fromUrl.numUsers ?? DEFAULTS.numUsers);
+
+  // ── Sync URL search params when any value changes ──────────────────
+  const allValues = () => ({
+    dealsPerMonth,
+    avgDealSize,
+    currentWinRate,
+    improvedWinRate,
+    monthlyCost,
+    numUsers,
+  });
+
+  function updateUrl() {
+    if (typeof window === "undefined") return;
+    const vals = allValues();
+    const sp = new URLSearchParams();
+    for (const [k, v] of Object.entries(vals)) {
+      sp.set(k, String(v));
+    }
+    const newQs = sp.toString();
+    if (window.location.search.slice(1) !== newQs) {
+      window.history.replaceState(null, "", `?${newQs}`);
+    }
+  }
+
+  // We need setters that also call updateUrl after state settles
+  const setDealsPerMonth    = (v: number) => { _setDealsPerMonth(v);    setTimeout(updateUrl, 0); };
+  const setAvgDealSize      = (v: number) => { _setAvgDealSize(v);      setTimeout(updateUrl, 0); };
+  const setCurrentWinRate   = (v: number) => { _setCurrentWinRate(v);   setTimeout(updateUrl, 0); };
+  const setImprovedWinRate  = (v: number) => { _setImprovedWinRate(v); setTimeout(updateUrl, 0); };
+  const setMonthlyCost      = (v: number) => { _setMonthlyCost(v);      setTimeout(updateUrl, 0); };
+  const setNumUsers         = (v: number) => { _setNumUsers(v);         setTimeout(updateUrl, 0); };
 
   // Calculations
   const currentDealsWon = Math.round(dealsPerMonth * (currentWinRate / 100));
