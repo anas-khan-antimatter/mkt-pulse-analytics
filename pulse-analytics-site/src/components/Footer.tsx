@@ -1,20 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Atom, X, Globe, Mail, Heart } from "lucide-react";
+import { Atom, X, Globe, Mail, Heart, BarChart3, Grid3x3, Monitor, Variable } from "lucide-react";
 
 const footerLinks = {
   Product: [
-    { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Integrations", href: "#" },
-    { label: "Changelog", href: "#" },
+    { label: "Dashboard", href: "/demo" },
+    { label: "Canvas Dashboard", href: "/canvas" },
+    { label: "Integrations", href: "/integrations" },
+    { label: "API Playground", href: "/test" },
   ],
   Resources: [
     { label: "Documentation", href: "#docs" },
     { label: "API Reference", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Community", href: "#" },
+    { label: "AI Insights", href: "/insights" },
+    { label: "Changelog", href: "#" },
   ],
   Company: [
     { label: "About", href: "#" },
