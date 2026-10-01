@@ -1,20 +1,28 @@
 {
-  "root": "/tmp/am-ws/c-1790732955989-v0yiv",
-  "name": "c-1790732955989-v0yiv",
-  "generatedAt": "2026-10-01T15:23:00.517Z",
-  "fileCount": 44,
-  "dirCount": 13,
+  "root": "/tmp/am-ws/c-1790870821688-tuec5",
+  "name": "c-1790870821688-tuec5",
+  "generatedAt": "2026-10-01T16:22:37.191Z",
+  "fileCount": 50,
+  "dirCount": 18,
   "languages": {
+    "JSON": 7,
     "Markdown": 9,
-    "JSON": 5,
     "JavaScript": 2,
-    "TypeScript": 19,
+    "TypeScript": 23,
     "CSS": 1
   },
   "keyFiles": [
     "README.md"
   ],
   "directories": [
+    {
+      "dir": ".antimatter/lanes",
+      "fileCount": 1,
+      "files": [
+        "ship.json"
+      ],
+      "symbols": []
+    },
     {
       "dir": ".antimatter/wiki",
       "fileCount": 6,
@@ -30,10 +38,11 @@
     },
     {
       "dir": "(root)",
-      "fileCount": 2,
+      "fileCount": 3,
       "files": [
         ".gitignore",
-        "README.md"
+        "README.md",
+        "vercel.json"
       ],
       "symbols": []
     },
@@ -84,6 +93,19 @@
       ]
     },
     {
+      "dir": "pulse-analytics-site/src/app/api/demo-metrics",
+      "fileCount": 1,
+      "files": [
+        "route.ts"
+      ],
+      "symbols": [
+        {
+          "name": "GET",
+          "kind": "fn"
+        }
+      ]
+    },
+    {
       "dir": "pulse-analytics-site/src/app/api/insights",
       "fileCount": 1,
       "files": [
@@ -95,6 +117,31 @@
           "kind": "fn"
         }
       ]
+    },
+    {
+      "dir": "pulse-analytics-site/src/app/api/webhooks/test",
+      "fileCount": 1,
+      "files": [
+        "route.ts"
+      ],
+      "symbols": [
+        {
+          "name": "POST",
+          "kind": "fn"
+        },
+        {
+          "name": "GET",
+          "kind": "fn"
+        }
+      ]
+    },
+    {
+      "dir": "pulse-analytics-site/src/app/canvas",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
     },
     {
       "dir": "pulse-analytics-site/src/app/demo",
@@ -122,6 +169,14 @@
     },
     {
       "dir": "pulse-analytics-site/src/app/playground",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "pulse-analytics-site/src/app/test",
       "fileCount": 1,
       "files": [
         "page.tsx"
