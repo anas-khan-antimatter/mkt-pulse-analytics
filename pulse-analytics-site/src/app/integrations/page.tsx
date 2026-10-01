@@ -374,37 +374,17 @@ export default function IntegrationsPage() {
                     <button
                       className={`w-full h-8 rounded-xl text-xs font-medium transition-all ${
                         integration.connected
-                          ? "glass text-green-400"
-                          : "bg-primary/10 text-primary hover:bg-primary/20"
+                          ? "bg-green-500/10 text-green-400 border border-green-500/20"
+                          : "glass-primary hover:bg-primary/15"
                       }`}
                     >
-                      {integration.connected ? "Configure" : "Connect"}
+                      {integration.connected ? "Active · Manage" : "Connect"}
                     </button>
                   </motion.div>
                 );
               })
             )}
           </AnimatePresence>
-        </motion.div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="text-center mt-12"
-        >
-          <p className="text-sm text-muted-foreground mb-4">
-            {allIntegrations.filter((i) => i.connected).length} of{" "}
-            {allIntegrations.length} integrations connected
-          </p>
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 glass glass-card-hover rounded-full px-6 py-3 text-sm font-medium"
-          >
-            Request an integration
-            <ExternalLink size={14} />
-          </a>
         </motion.div>
 
         {/* ── Webhook Simulator ─────────────────────────────────────── */}
