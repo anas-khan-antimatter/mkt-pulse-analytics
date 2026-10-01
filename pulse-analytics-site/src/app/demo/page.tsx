@@ -276,6 +276,7 @@ export default function DemoPage() {
           setChurnData(newChurn);
           setMrrData(newMrr);
           setDataSource("api");
+          setLoading(false);
           return;
         }
       }
