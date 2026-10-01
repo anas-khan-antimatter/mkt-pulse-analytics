@@ -1,14 +1,14 @@
 {
   "root": "/tmp/am-ws/c-1790732955989-v0yiv",
   "name": "c-1790732955989-v0yiv",
-  "generatedAt": "2026-10-01T05:38:42.847Z",
-  "fileCount": 46,
-  "dirCount": 15,
+  "generatedAt": "2026-10-01T15:23:00.517Z",
+  "fileCount": 44,
+  "dirCount": 13,
   "languages": {
     "Markdown": 9,
     "JSON": 5,
     "JavaScript": 2,
-    "TypeScript": 21,
+    "TypeScript": 19,
     "CSS": 1
   },
   "keyFiles": [
@@ -84,19 +84,6 @@
       ]
     },
     {
-      "dir": "pulse-analytics-site/src/app/api/demo-metrics",
-      "fileCount": 1,
-      "files": [
-        "route.ts"
-      ],
-      "symbols": [
-        {
-          "name": "GET",
-          "kind": "fn"
-        }
-      ]
-    },
-    {
       "dir": "pulse-analytics-site/src/app/api/insights",
       "fileCount": 1,
       "files": [
@@ -105,23 +92,6 @@
       "symbols": [
         {
           "name": "POST",
-          "kind": "fn"
-        }
-      ]
-    },
-    {
-      "dir": "pulse-analytics-site/src/app/api/webhooks/test",
-      "fileCount": 1,
-      "files": [
-        "route.ts"
-      ],
-      "symbols": [
-        {
-          "name": "POST",
-          "kind": "fn"
-        },
-        {
-          "name": "GET",
           "kind": "fn"
         }
       ]
