@@ -1,5 +1,5 @@
-# Workspace Map — c-1790877738177-kidmy
-_Generated 2026-10-01 · 50 files · 18 directories_  
+# Workspace Map — c-1790884288389-l2ui1
+_Generated 2026-10-02 · 50 files · 18 directories_  
 _Deterministic structural map. Regenerate with the `map` tool or "Antimatter: Map Workspace". Do not hand-edit._
 
 ## Languages
