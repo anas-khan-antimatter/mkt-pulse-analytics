@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Production build — App Router routes for /canvas, /demo, /integrations, /test
 };
 
 export default nextConfig;
