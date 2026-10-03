@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import {
   BarChart3,
   TrendingUp,
@@ -218,10 +217,8 @@ export default function CanvasPage() {
         {/* KPI cards */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {kpis.map((kpi) => (
-            <motion.div
+            <div
               key={kpi.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
               className="glass-card p-5"
             >
               <div className="flex items-center justify-between mb-3">
@@ -250,10 +247,7 @@ export default function CanvasPage() {
         </div>
 
         {/* Canvas chart */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
+        <div
           className="glass-card p-6"
         >
           <div className="flex items-center justify-between mb-5">
@@ -272,10 +266,7 @@ export default function CanvasPage() {
         </motion.div>
 
         {/* Data table */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
+        <div
           className="glass-card p-6 overflow-x-auto"
         >
           <h3 className="text-sm font-semibold mb-3">Raw Series</h3>
