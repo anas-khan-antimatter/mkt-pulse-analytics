@@ -242,7 +242,7 @@ export default function CanvasPage() {
               </div>
               <div className="text-2xl font-bold mb-0.5">{kpi.value}</div>
               <div className="text-xs text-muted-foreground">{kpi.label}</div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -263,7 +263,7 @@ export default function CanvasPage() {
             </div>
           </div>
           <CanvasBarChart data={data} />
-        </motion.div>
+        </div>
 
         {/* Data table */}
         <div
@@ -300,7 +300,7 @@ export default function CanvasPage() {
               ))}
             </tbody>
           </table>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
