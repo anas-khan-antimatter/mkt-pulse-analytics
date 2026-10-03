@@ -180,3 +180,4 @@ function generateFallbackInsights(
 
   return insights.slice(0, 3);
 }
+// force rebuild
