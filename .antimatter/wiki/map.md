@@ -1,4 +1,4 @@
-# Workspace Map — ch_mush6z3w_1
+# Workspace Map — ch_muspaa0e_1
 _Generated 2026-10-03 · 51 files · 19 directories_  
 _Deterministic structural map. Regenerate with the `map` tool or "Antimatter: Map Workspace". Do not hand-edit._
 
