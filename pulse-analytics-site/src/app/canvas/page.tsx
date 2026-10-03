@@ -106,7 +106,7 @@ function drawCanvasBarChart(
 
 /* ── Canvas chart wrapper component ─────────────────────────────────── */
 
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 function CanvasBarChart({
   data,
