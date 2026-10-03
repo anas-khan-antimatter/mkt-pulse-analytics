@@ -1,3 +1,5 @@
 {
-  "rootDirectory": "pulse-analytics-site"
+  "rootDirectory": "pulse-analytics-site",
+  "buildCommand": "npm run build",
+  "framework": "nextjs"
 }
